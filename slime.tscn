@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://blax7mi4ucljw"]
+
+[ext_resource type="Texture2D" uid="uid://b1y85y1ly6iqb" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_5jc4t"]
+[ext_resource type="Script" uid="uid://efoxnlf8q3i7" path="res://scripts/slime.gd" id="1_ppcr1"]
+[ext_resource type="PackedScene" uid="uid://bxmco877p4qjk" path="res://killzone.tscn" id="2_4l1t8"]
+[ext_resource type="Script" uid="uid://cw5a4po25ixx3" path="res://scripts/collision_shape_2d.gd" id="4_jayke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcr1"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jayke"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002g"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bratd"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5b0gg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppcr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jayke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2002g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bratd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jc4t"]
+size = Vector2(10, 14)
+
+[node name="slime" type="Node2D"]
+script = ExtResource("1_ppcr1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5b0gg")
+autoplay = "default"
+frame = 2
+frame_progress = 0.27576214
+flip_h = true
+
+[node name="killzone" parent="." instance=ExtResource("2_4l1t8")]
+script = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_5jc4t")
+script = ExtResource("4_jayke")
+
+[node name="raycastright" type="RayCast2D" parent="."]
+position = Vector2(1, 5)
+target_position = Vector2(10, 0)
+
+[node name="raycastleft" type="RayCast2D" parent="."]
+position = Vector2(-2, 5)
+target_position = Vector2(-9, 0)
