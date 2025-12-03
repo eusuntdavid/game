@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvwrfokt5v8ue"]
+[gd_scene load_steps=20 format=3 uid="uid://cvwrfokt5v8ue"]
 
 [ext_resource type="PackedScene" uid="uid://5sgy0k2htp7b" path="res://player.tscn" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://do5lfpq2dysdi" path="res://player.gd" id="2_0e48y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c06q2rpgj30xa" path="res://platform.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://b8eo2xy3n2b5e" path="res://coin.tscn" id="5_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bxmco877p4qjk" path="res://killzone.tscn" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://bssqg3eab3uhp" path="res://slime.tscn" id="7_d21ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("3_epypp")
@@ -432,3 +433,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_ir8iy")
 }
 autoplay = "RESET"
+
+[node name="slime2" parent="." instance=ExtResource("7_d21ai")]
+position = Vector2(592, -150)
