@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://1x5v2og6yriv"]
+[gd_scene load_steps=16 format=3 uid="uid://1x5v2og6yriv"]
 
 [ext_resource type="Texture2D" uid="uid://cajs5kqfcgyys" path="res://Screenshot 2025-12-08 195332.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://d30kfbh7qsmnk" path="res://main_menu.gd" id="1_fu7sn"]
 [ext_resource type="FontFile" uid="uid://4cim6ptqsfjj" path="res://GrapeSoda.ttf" id="2_7vrkn"]
+[ext_resource type="FontFile" uid="uid://b8b8uyxivkyyo" path="res://Super Croissant.ttf" id="3_qe12f"]
 [ext_resource type="AudioStream" uid="uid://dn3n1aqsuqycu" path="res://assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="4_jix8l"]
 [ext_resource type="Script" uid="uid://buld6tnoupn00" path="res://audio_control.gd" id="5_glbon"]
 [ext_resource type="Script" uid="uid://dep3k3314r1q5" path="res://fullscreencontrol.gd" id="6_nlkkf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 texture = ExtResource("1_06t4h")
-modulate_color = Color(0.22670761, 0.22670746, 0.22670743, 1)
+modulate_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -70,29 +71,90 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -6.0
-offset_right = -6.0
-offset_bottom = -9.0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = -4.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
 
-[node name="main buttons" type="VBoxContainer" parent="."]
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -584.5
+offset_top = -219.0
+offset_right = 550.5
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "                                                  INSTRUCTIONS:
+"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 188.0
+offset_right = 618.0
+offset_bottom = 272.0
+text = "                                                                                                                        Must read!!!"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 127.0
+offset_right = 1112.0
+offset_bottom = 623.0
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 2.0
+offset_right = 326.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 30
+text = "Welcome to"
+
+[node name="Label5" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 5.0
+offset_right = 870.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_qe12f")
+theme_override_font_sizes/font_size = 80
+text = "Tiny warrior"
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main buttons" type="VBoxContainer" parent="Panel2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.62100005
 anchor_right = 0.5
 anchor_bottom = 0.62100005
-offset_left = -192.5
-offset_top = -125.27103
-offset_right = 198.5
-offset_bottom = 125.72897
+offset_left = 365.0
+offset_top = 244.99997
+offset_right = 756.0
+offset_bottom = 563.99994
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="main buttons"]
+[node name="Button" type="Button" parent="Panel2/main buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -106,7 +168,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7vrkn")
 text = "Start Game"
 
-[node name="Button3" type="Button" parent="main buttons"]
+[node name="Button3" type="Button" parent="Panel2/main buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -120,7 +182,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7vrkn")
 text = "Exit"
 
-[node name="Button2" type="Button" parent="main buttons"]
+[node name="Button2" type="Button" parent="Panel2/main buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -134,30 +196,30 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7vrkn")
 text = "Options"
 
-[node name="level1" type="Button" parent="main buttons"]
+[node name="level1" type="Button" parent="Panel2/main buttons"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "       Level 1"
 
-[node name="level2" type="Button" parent="main buttons"]
+[node name="level2" type="Button" parent="Panel2/main buttons"]
 layout_mode = 2
 text = "      Level 2"
 
-[node name="level3" type="Button" parent="main buttons"]
+[node name="level3" type="Button" parent="Panel2/main buttons"]
 layout_mode = 2
 text = "       Level 3"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -348.5
-offset_top = -235.5
-offset_right = 330.5
-offset_bottom = -155.5
+offset_left = 209.0
+offset_top = 90.0
+offset_right = 888.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -166,28 +228,27 @@ theme_override_constants/shadow_offset_y = 30
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 80
-text = "Godot Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel2"]
 stream = ExtResource("4_jix8l")
 autoplay = true
 bus = &"music"
 
-[node name="Options" type="Panel" parent="."]
+[node name="Options" type="Panel" parent="Panel2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.633
 anchor_right = 0.5
 anchor_bottom = 0.633
-offset_left = -227.5
-offset_top = -235.08301
-offset_right = 252.5
-offset_bottom = 154.91699
+offset_left = 329.5
+offset_top = 206.59698
+offset_right = 809.5
+offset_bottom = 596.597
 
-[node name="Label" type="Label" parent="Options"]
+[node name="Label" type="Label" parent="Panel2/Options"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.053000003
@@ -205,7 +266,7 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="Button" parent="Options"]
+[node name="Back" type="Button" parent="Panel2/Options"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 324.0
@@ -223,7 +284,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7vrkn")
 text = "Back"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/Options"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -238,15 +299,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2/Options/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Options/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Panel2/Options/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Music volume"
 
-[node name="AudioControl" type="HSlider" parent="Options/VBoxContainer/HBoxContainer"]
+[node name="AudioControl" type="HSlider" parent="Panel2/Options/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/slider = SubResource("StyleBoxLine_jix8l")
@@ -258,24 +319,24 @@ value = 1.0
 script = ExtResource("5_glbon")
 audio_bus_name = "music"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Options/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel2/Options/VBoxContainer"]
 layout_mode = 2
 
-[node name="fullscreencontrol" type="CheckButton" parent="Options/VBoxContainer/HBoxContainer3"]
+[node name="fullscreencontrol" type="CheckButton" parent="Panel2/Options/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Fullscreen"
 script = ExtResource("6_nlkkf")
 
-[connection signal="pressed" from="main buttons/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="main buttons/Button3" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="main buttons/Button2" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="main buttons/level1" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="main buttons/level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="main buttons/level2" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="main buttons/level2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="main buttons/level3" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="main buttons/level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
-[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/AudioControl" to="Options/VBoxContainer/HBoxContainer/AudioControl" method="_on_value_changed"]
-[connection signal="toggled" from="Options/VBoxContainer/HBoxContainer3/fullscreencontrol" to="Options/VBoxContainer/HBoxContainer3/fullscreencontrol" method="_on_toggled"]
+[connection signal="pressed" from="Panel2/main buttons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level1" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level2" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level3" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Panel2/Options/Back" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="Panel2/Options/VBoxContainer/HBoxContainer/AudioControl" to="Panel2/Options/VBoxContainer/HBoxContainer/AudioControl" method="_on_value_changed"]
+[connection signal="toggled" from="Panel2/Options/VBoxContainer/HBoxContainer3/fullscreencontrol" to="Panel2/Options/VBoxContainer/HBoxContainer3/fullscreencontrol" method="_on_toggled"]

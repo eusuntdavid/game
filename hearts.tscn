@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0n17xm7escn"]
+
+[ext_resource type="Texture2D" uid="uid://df25oggp4f58e" path="res://pixel-heart-2779422_1280.webp" id="1_qbydv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ffj4"]
+size = Vector2(110, 103)
+
+[node name="hearts" type="Area2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 335.0
+offset_bottom = 120.0
+
+[node name="heart1" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 117.0
+offset_bottom = 126.0
+texture = ExtResource("1_qbydv")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/heart1"]
+position = Vector2(57, 63)
+shape = SubResource("RectangleShape2D_3ffj4")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[node name="heart2" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 1.0
+offset_right = 218.0
+offset_bottom = 120.0
+texture = ExtResource("1_qbydv")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/heart2"]
+position = Vector2(56, 62)
+shape = SubResource("RectangleShape2D_3ffj4")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[node name="heart3" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 2.0
+offset_right = 334.0
+offset_bottom = 121.0
+texture = ExtResource("1_qbydv")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/heart3"]
+position = Vector2(42, 68)
+shape = SubResource("RectangleShape2D_3ffj4")
+debug_color = Color(0, 0, 0, 0.41960785)
