@@ -1,16 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://1x5v2og6yriv"]
+[gd_scene load_steps=13 format=3 uid="uid://1x5v2og6yriv"]
 
-[ext_resource type="Texture2D" uid="uid://cajs5kqfcgyys" path="res://Screenshot 2025-12-08 195332.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://d30kfbh7qsmnk" path="res://main_menu.gd" id="1_fu7sn"]
 [ext_resource type="FontFile" uid="uid://4cim6ptqsfjj" path="res://GrapeSoda.ttf" id="2_7vrkn"]
-[ext_resource type="FontFile" uid="uid://b8b8uyxivkyyo" path="res://Super Croissant.ttf" id="3_qe12f"]
 [ext_resource type="AudioStream" uid="uid://dn3n1aqsuqycu" path="res://assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="4_jix8l"]
 [ext_resource type="Script" uid="uid://buld6tnoupn00" path="res://audio_control.gd" id="5_glbon"]
 [ext_resource type="Script" uid="uid://dep3k3314r1q5" path="res://fullscreencontrol.gd" id="6_nlkkf"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
-texture = ExtResource("1_06t4h")
-modulate_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -58,77 +52,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 4.0
-offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fu7sn")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -3.0
-offset_right = -4.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -584.5
-offset_top = -219.0
-offset_right = 550.5
-offset_bottom = -78.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 35
-text = "                                                  INSTRUCTIONS:
-"
-
-[node name="Label2" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 188.0
-offset_right = 618.0
-offset_bottom = 272.0
-text = "                                                                                                                        Must read!!!"
-
-[node name="Label3" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 127.0
-offset_right = 1112.0
-offset_bottom = 623.0
-
-[node name="Label4" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 144.0
-offset_top = 2.0
-offset_right = 326.0
-offset_bottom = 58.0
-theme_override_font_sizes/font_size = 30
-text = "Welcome to"
-
-[node name="Label5" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 341.0
-offset_top = 5.0
-offset_right = 870.0
-offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("3_qe12f")
-theme_override_font_sizes/font_size = 80
-text = "Tiny warrior"
 
 [node name="Panel2" type="Panel" parent="."]
 visible = false
@@ -331,12 +257,12 @@ script = ExtResource("6_nlkkf")
 [connection signal="pressed" from="Panel2/main buttons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Panel2/main buttons/Button3" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Panel2/main buttons/Button2" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Panel2/main buttons/level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Panel2/main buttons/level1" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Panel2/main buttons/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Panel2/main buttons/level2" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="Panel2/main buttons/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Panel2/main buttons/level3" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Panel2/main buttons/level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Panel2/Options/Back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="Panel2/Options/VBoxContainer/HBoxContainer/AudioControl" to="Panel2/Options/VBoxContainer/HBoxContainer/AudioControl" method="_on_value_changed"]
 [connection signal="toggled" from="Panel2/Options/VBoxContainer/HBoxContainer3/fullscreencontrol" to="Panel2/Options/VBoxContainer/HBoxContainer3/fullscreencontrol" method="_on_toggled"]

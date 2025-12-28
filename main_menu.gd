@@ -1,7 +1,7 @@
 extends Control
 
-@onready var main_buttons: VBoxContainer = $"main buttons"
-@onready var options: Panel = $Options
+@onready var main_buttons: VBoxContainer = $"Panel2/main buttons"
+@onready var options: Panel = $"Panel2/Options"
 
 
 func _ready():
@@ -43,4 +43,4 @@ func _on_level_3_pressed() -> void:
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"): # ESC
-		get_tree().change_scene_to_file("res://Menu.tscn")
+		get_tree().change_scene_to_file("res://main_menu.tscn")

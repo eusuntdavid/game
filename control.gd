@@ -4,6 +4,10 @@ extends Control
 @onready var label: Label = $Label
 # The player is two levels up in the tree: player/Camera2D/timer (this Control)
 @onready var player = $"../.."
+# Heart sprites
+@onready var heart1: Sprite2D = $PixelHeart27794221280
+@onready var heart2: Sprite2D = $PixelHeart27794221281
+@onready var heart3: Sprite2D = $PixelHeart27794221282
 
 var seconds := 0
 var minutes := 0
@@ -19,6 +23,13 @@ func _ready() -> void:
 	if not timer.timeout.is_connected(_on_Timer_timeout):
 		timer.timeout.connect(_on_Timer_timeout)
 	timer.start()
+	
+	# Connect to GameManager hearts signals
+	if GameManager:
+		if not GameManager.hearts_changed.is_connected(_on_hearts_changed):
+			GameManager.hearts_changed.connect(_on_hearts_changed)
+		# Update hearts display with initial value
+		_update_hearts_display(GameManager.get_hearts())
 
 
 func _on_Timer_timeout() -> void:
@@ -52,3 +63,14 @@ func Reset_Timer() -> void:
 	minutes = Dminutes
 	# Show initial value immediately.
 	label.text = "%d:%02d" % [minutes, seconds]
+
+
+func _on_hearts_changed(hearts: int) -> void:
+	_update_hearts_display(hearts)
+
+
+func _update_hearts_display(hearts: int) -> void:
+	# Show/hide heart sprites based on current hearts count
+	heart1.visible = hearts >= 1
+	heart2.visible = hearts >= 2
+	heart3.visible = hearts >= 3

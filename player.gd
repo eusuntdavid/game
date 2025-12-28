@@ -46,3 +46,17 @@ func _physics_process(delta: float) -> void:
 func die() -> void:
 	# Simple death behaviour: restart the current level.
 	get_tree().reload_current_scene()
+
+
+func _ready() -> void:
+	# Reset hearts when player is ready (on level load/reload)
+	if GameManager:
+		GameManager.reset_hearts()
+		# Connect to GameManager to handle hearts depletion
+		if not GameManager.hearts_depleted.is_connected(_on_hearts_depleted):
+			GameManager.hearts_depleted.connect(_on_hearts_depleted)
+
+
+func _on_hearts_depleted() -> void:
+	# When hearts reach 0, the player dies
+	die()

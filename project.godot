@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="game"
-run/main_scene="uid://1x5v2og6yriv"
+run/main_scene="uid://cvwrfokt5v8ue"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/gamemanager.gd"
 
 [display]
 
