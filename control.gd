@@ -2,8 +2,8 @@ extends Control
 
 @onready var timer: Timer = $Timer
 @onready var label: Label = $Label
-# The player is two levels up in the tree: player/Camera2D/timer (this Control)
-@onready var player = $"../.."
+# The player is at the scene root: CanvasLayer/Control/TopBar/timer -> ../../../../player
+@onready var player = $"../../../../player"
 
 var seconds := 0
 var minutes := 0
@@ -22,8 +22,10 @@ func _ready() -> void:
 func _on_Timer_timeout() -> void:
 	if minutes <= 0 and seconds <= 0:
 		timer.stop()
+		print('died22222')
 		if is_instance_valid(player) and player.has_method("die"):
 			player.die()
+			print('died')
 		return
 
 	if seconds == 0:

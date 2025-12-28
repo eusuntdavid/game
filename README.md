@@ -1,152 +1,126 @@
-<a id="readme-top"></a>
+# Platformer Game
 
-<!-- SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+A 2D platformer game built with Godot Engine 4.5. Navigate through challenging levels, collect coins, avoid enemies, and reach the finish line before time runs out!
 
-<!-- HEADER -->
-<br />
-<div align="center">
-    <a href="https://github.com/BudzioT/Godot_Super-Wakatime">
-        <img src="https://cloud-bo1ln2br1-hack-club-bot.vercel.app/0godotwaka22.png"  alt="Godot Wakatime"/>
-    </a>
-    <h3 align="center"> Godot Super Wakatime </h3>
-    <p align="center">
-        Tool to measure time spent in loved by many people game engine - Godot
-        <br />
-        Officially approved to use in events created by Hack Club
-        <br />
-        <br />
-        <a href="https://godotengine.org/asset-library/asset/3484">Get from Asset Lib</a>
-        ·
-        <a href="https://youtu.be/rqAc-YdVXyM">View Demo</a>
-        ·
-        <a href="https://github.com/BudzioT/Godot_Super-Wakatime/issues/new">Report Bug / Request Feature</a>
-    </p>
-</div>
+## 🎮 Features
 
-<!-- CONTENTS -->
-<details>
-    <summary>Table of Contents</summary>
-    <ol>
-        <li>
-            <a href="#about">About The Project</a>
-            <ul>
-                <li><a href="#built-with">Built Using</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#getting-started">Getting Started</a>
-            <ul>
-                <li><a href="#installation">Installation</a></li>
-            </ul>
-        </li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#license">License</a></li>
-    </ol>
-</details>
+- **Multiple Levels**: Three challenging levels to complete
+- **Time Challenge**: Each level has a countdown timer - complete before time runs out!
+- **Coin Collection**: Collect coins throughout each level to track your progress
+- **Enemy Encounters**: Avoid or outmaneuver slime enemies
+- **Smooth Controls**: Responsive movement and jumping mechanics
+- **Pixel Art Graphics**: Classic retro-style pixel art visuals
+- **Animated Player**: Knight character with idle, run, and jump animations
 
+## 🎯 How to Play
 
-<!-- ABOUT -->
-## About The Project
-<br />
+### Controls
+- **A / Left Arrow**: Move left
+- **D / Right Arrow**: Move right
+- **Space**: Jump
+- **ESC**: Return to main menu
 
-[![Product Screenshot][product-screenshot]](https://waka.hackclub.com)
+### Objectives
+1. Navigate through each level platform by platform
+2. Collect coins along the way
+3. Avoid enemies and hazards
+4. Reach the finish line before the timer expires
+5. If you fall into the killzone or time runs out, the level resets
 
-This tool can successfully measure time spent building your games or apps in Godot.
-<br />
-Here's why:
-* It differentiates between switching a scene and script
-* It counts key presses as coding and mouse clicks as building scene
-* Changing scene structure results in a heartbeat sent
-* It correctly detects OS, machine name, language, editor, files
-* It can detect your cursor line and position
-* Time is split between: Building, Coding, Testing
-* In the future it will also detect testing your projects
+### Game Mechanics
+- **Timer System**: Each level starts with a countdown timer (default: 1:30)
+- **Level Reset**: The level automatically resets if:
+  - The timer reaches 0:00
+  - You fall into the killzone (bottom of the screen)
+- **Progress Tracking**: Your coin collection is tracked and displayed
+- **Level Progression**: Complete a level to advance to the next one
 
-It works on both Linux and Windows, it wasn't tested on macOS yet
-<br />
-You can also see your time spent in the editor itself:
-[![Time in editor][time-screenshot]]
+## 🚀 Getting Started
 
-<p align="right">(<a href="#readme-top">top</a>)</p>
+### Requirements
+- Godot Engine 4.5 or later
+- The project includes all necessary assets
 
+### Running the Game
+1. Open the project in Godot Engine
+2. Open `res://main_menu.tscn` or run the project
+3. Click "Start" or select a level from the menu
+4. Enjoy playing!
 
-### Built Using
-I used the Ouch! CLI tool for decompression of files <br />
-This project was built using one simple, yet powerful language.<br />
-It required a lot of workarounds, but it was a pleasure to use it
-* [![GDScript][Godot]][Godot-url]
-* [![Ouch!][Ouch-shield]][Ouch-url]
+### Building
+1. Open the project in Godot Engine
+2. Go to **Project → Export**
+3. Select your target platform
+4. Configure export settings
+5. Export the game
 
-<p align="right">(<a href="#readme-top">top</a>)</p>
+## 📁 Project Structure
 
-<!-- GETTING STARTED -->
-## Getting Started
-How to install and use this software? It's easy!
+```
+game/
+├── scenes/           # Level scenes and main menu
+│   ├── level_1.tscn
+│   ├── level_2.tscn
+│   ├── level_3.tscn
+│   └── music.tscn
+├── scripts/          # Game logic scripts
+│   ├── gamemanager.gd
+│   └── killzone.gd
+├── assets/           # Game assets (sprites, sounds, fonts)
+│   └── brackeys_platformer_assets/
+├── player.gd         # Player character script
+├── coin.gd           # Coin pickup script
+├── finish.gd         # Finish line script
+├── control.gd        # Timer control script
+├── main_menu.gd      # Main menu script
+└── project.godot     # Godot project file
+```
 
-### Installation
-You can either download it from the [Godot Asset Library](https://godotengine.org/asset-library/asset/3484).
-<br />Or you can manually install it, here's how to do it!
-1. Clone the repository
-    ```sh
-    git clone https://github.com/BudzioT/Godot_Super-Wakatime.git
-    ```
-2. Go into your project
-3. Insert the entire `./addons` folder into your project `res://` directory
+## 🎨 Assets
 
-<p align="right">(<a href="#readme-top">top</a>)</p>
+This project uses assets from:
+- **Brackeys Platformer Assets** (included in `assets/brackeys_platformer_assets/`)
+- Pixel art fonts and sprites
 
-<!-- USAGE -->
-## Usage
-Don't know how to use this plugin? Here are the steps:
-1. Turn on the plugin in your plugins. In your `Project -> Project Settings -> Plugins -> `Click the `Enable` checkbox near this plugin
-2. If prompted for API key, provide it from Wakatime website
-3. if there is an issue with it, please manually create `~/.wakatime.cfg` file with these contents:
-    ```sh
-    [settings]
-    api_key=xxxx
-    ```
-    Where xxxx is your api key
-<br /><br />
-If you are coming from Hack Club use this:
-    ```sh
-    [settings]
-    api_url = https://hackatime.hackclub.com/api/hackatime/v1
-    api_key=xxxx
-    ```
-4. Wakatime CLI should have been installed automatically along with Ouch! Decompression library
-5. Work on your project! You should see your results on either Wakatime or Hackatime!
-6. You can also see your time at the bottom panel
+## 🔧 Configuration
 
-<p align="right">(<a href="#readme-top">top</a>)</p>
+### Timer Settings
+The default timer settings can be modified in `control.gd`:
+```gdscript
+var Dseconds := 30  # Default seconds
+var Dminutes := 1   # Default minutes
+```
 
-<!-- LICENSE -->
-## License
+### Player Settings
+Player movement settings can be adjusted in `player.gd`:
+```gdscript
+const SPEED = 130.0          # Movement speed
+const JUMP_VELOCITY = -305.0 # Jump strength
+```
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## 🐛 Known Issues
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Timer resets to default values on level reload
+- Some level scenes have embedded scripts that should be moved to separate files
 
+## 🔮 Future Enhancements
 
-<!-- URLS -->
-[contributors-shield]: https://img.shields.io/github/contributors/budziot/Godot_Super-Wakatime?style=for-the-badge
-[contributors-url]: https://github.com/BudzioT/Godot_Super-Wakatime/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/budziot/Godot_Super-Wakatime?style=for-the-badge
-[forks-url]: https://github.com/BudzioT/Godot_Super-Wakatime/forks
-[stars-shield]: https://img.shields.io/github/stars/budziot/Godot_Super-Wakatime?style=for-the-badge
-[stars-url]: https://github.com/BudzioT/Godot_Super-Wakatime/stargazers
-[issues-shield]: https://img.shields.io/github/issues/budziot/Godot_Super-Wakatime?style=for-the-badge
-[issues-url]: https://github.com/BudzioT/Godot_Super-Wakatime/issues
-[license-shield]: https://img.shields.io/github/license/budziot/Godot_Super-Wakatime?style=for-the-badge
-[license-url]: https://github.com/BudzioT/Godot_Super-Wakatime/blob/master/addons/godot_super-wakatime/LICENSE
-[product-screenshot]: https://cloud-j4wibbzz7-hack-club-bot.vercel.app/0image.png
-[product-logo]: https://cloud-j4wibbzz7-hack-club-bot.vercel.app/2godotwaka2.png
-[Godot]: https://img.shields.io/badge/Godot%20Engine-478CBF?logo=godotengine&logoColor=fff&style=flat
-[Godot-url]: https://godotengine.org/
-[Ouch-shield]: https://img.shields.io/badge/Ouch!-tool-blue?label=Ouch!
-[Ouch-url]: https://github.com/ouch-org/ouch
-[time-screenshot]: https://cloud-l88kldf50-hack-club-bot.vercel.app/0image.png
+- Save/load system for high scores
+- Sound effects for actions (jump, coin collection, etc.)
+- More levels
+- Leaderboard system
+- Settings menu for adjusting controls and audio
+
+## 📝 License
+
+See `LICENSE` file for details.
+
+## 🙏 Credits
+
+- Built with [Godot Engine](https://godotengine.org/)
+- Assets from Brackeys Platformer Assets pack
+- Developed as a learning project
+
+---
+
+**Have fun playing!** 🎮
