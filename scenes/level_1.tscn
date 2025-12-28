@@ -233,8 +233,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _ready() -> void:
+	Engine.time_scale = 1.0
+
 func die() -> void:
-	get_tree().reload_current_scene()
+	Engine.time_scale = 1.0
+	get_tree().call_deferred(\"reload_current_scene\")
 "
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d21ai"]

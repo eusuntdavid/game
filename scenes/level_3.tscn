@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dw4iarj8ex4u4"]
+[gd_scene load_steps=36 format=3 uid="uid://dw4iarj8ex4u4"]
 
 [ext_resource type="Script" uid="uid://ddodl7c3ooo6b" path="res://scripts/gamemanager.gd" id="1_vcx5n"]
 [ext_resource type="FontFile" uid="uid://baa0n1ocbp51g" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_56dhn"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://m87jpfsh3c7n" path="res://winter platform.tscn" id="10_vcx5n"]
 [ext_resource type="PackedScene" uid="uid://ca45mf4sde8mm" path="res://purple slime.tscn" id="11_56dhn"]
 [ext_resource type="PackedScene" uid="uid://b8eo2xy3n2b5e" path="res://coin.tscn" id="12_ax3dk"]
+[ext_resource type="PackedScene" uid="uid://c43ha5u2qdvpf" path="res://control.tscn" id="13_ax3dk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("3_ax3dk")
@@ -232,8 +233,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _ready() -> void:
+	Engine.time_scale = 1.0
+
 func die() -> void:
-	get_tree().reload_current_scene()
+	Engine.time_scale = 1.0
+	get_tree().call_deferred("reload_current_scene")
 "
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d21ai"]
@@ -426,6 +431,21 @@ _data = {
 &"move6": SubResource("Animation_wa6ex")
 }
 
+[sub_resource type="Animation" id="Animation_k5r18"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1071, -232)]
+}
+
 [sub_resource type="Animation" id="Animation_q7pjq"]
 resource_name = "new_animation"
 loop_mode = 2
@@ -442,26 +462,13 @@ tracks/0/keys = {
 "values": [Vector2(1194, -232), Vector2(1071, -232)]
 }
 
-[sub_resource type="Animation" id="Animation_k5r18"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1071, -232)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w5nkq"]
 _data = {
 &"RESET": SubResource("Animation_k5r18"),
 &"new_animation": SubResource("Animation_q7pjq")
 }
+
+[sub_resource type="Theme" id="Theme_level3"]
 
 [node name="game" type="Node2D"]
 
@@ -659,3 +666,34 @@ position = Vector2(1348, -222)
 
 [node name="PURPLE SLIME5" parent="." instance=ExtResource("11_56dhn")]
 position = Vector2(1236, -224)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_level3")
+
+[node name="timer" parent="CanvasLayer/Control/TopBar" instance=ExtResource("13_ax3dk")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = -177.0
+offset_bottom = 66.0
+grow_horizontal = 2

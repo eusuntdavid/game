@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c43ha5u2qdvpf"]
+[gd_scene load_steps=2 format=3 uid="uid://c43ha5u2qdvpf"]
 
 [ext_resource type="Script" uid="uid://cy2ixfeufv0mg" path="res://control.gd" id="1_62e2m"]
-[ext_resource type="Texture2D" uid="uid://df25oggp4f58e" path="res://pixel-heart-2779422_1280.webp" id="2_62e2m"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,18 +25,3 @@ layout_mode = 0
 offset_right = 167.0
 offset_bottom = 25.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="PixelHeart27794221280" type="Sprite2D" parent="."]
-position = Vector2(152, 28.999998)
-scale = Vector2(0.029687507, 0.0328125)
-texture = ExtResource("2_62e2m")
-
-[node name="PixelHeart27794221281" type="Sprite2D" parent="."]
-position = Vector2(189, 29)
-scale = Vector2(0.032031238, 0.034375004)
-texture = ExtResource("2_62e2m")
-
-[node name="PixelHeart27794221282" type="Sprite2D" parent="."]
-position = Vector2(229, 29)
-scale = Vector2(0.031249985, 0.034375004)
-texture = ExtResource("2_62e2m")

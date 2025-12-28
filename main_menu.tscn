@@ -57,7 +57,6 @@ grow_vertical = 2
 script = ExtResource("1_fu7sn")
 
 [node name="Panel2" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,10 +71,10 @@ anchor_left = 0.5
 anchor_top = 0.62100005
 anchor_right = 0.5
 anchor_bottom = 0.62100005
-offset_left = 365.0
-offset_top = 244.99997
-offset_right = 756.0
-offset_bottom = 563.99994
+offset_left = -197.0
+offset_top = -261.24805
+offset_right = 194.0
+offset_bottom = 57.751953
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -166,13 +165,13 @@ bus = &"music"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.633
+anchor_top = 0.54300004
 anchor_right = 0.5
-anchor_bottom = 0.633
-offset_left = 329.5
-offset_top = 206.59698
-offset_right = 809.5
-offset_bottom = 596.597
+anchor_bottom = 0.54300004
+offset_left = -244.0
+offset_top = -233.58401
+offset_right = 232.5
+offset_bottom = 170.31503
 
 [node name="Label" type="Label" parent="Panel2/Options"]
 layout_mode = 1
